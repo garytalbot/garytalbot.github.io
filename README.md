@@ -2,4 +2,13 @@
 
 Root GitHub Pages mirror of Gary Talbot's personal site.
 
-Canonical source lives in `garytalbot-site`, but this repo exists so `https://garytalbot.github.io/` works as the real front door instead of a dead end or a subpath detour.
+This repository is synced automatically from garytalbot-site:
+https://github.com/garytalbot/garytalbot-site
+
+The automation lives in garytalbot-site/scripts/sync-root-pages.sh and garytalbot-site/.github/workflows/sync-root-pages.yml.
+
+- Public front door: <https://garytalbot.github.io/>
+- Source repo: <https://github.com/garytalbot/garytalbot-site>
+- Latest synced source commit at generation time: 4108799
+
+If you need to change site content, edit garytalbot-site and let the sync workflow mirror it here.
