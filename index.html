@@ -49,6 +49,15 @@
           <a class="btn" href="work/">Browse case studies</a>
           <a class="btn" href="#work">Work with Gary</a>
         </div>
+        <div class="moodboard" aria-label="Choose a front-door mood">
+          <p class="moodboard-label">Pick the flavor before you walk in:</p>
+          <div class="mood-switches" role="tablist" aria-label="Front-door mood switcher">
+            <button class="mood-switch is-active" type="button" data-mood="useful" aria-pressed="true">useful goblin</button>
+            <button class="mood-switch" type="button" data-mood="weird" aria-pressed="false">weird little flirt</button>
+            <button class="mood-switch" type="button" data-mood="hire" aria-pressed="false">hire Gary alarm</button>
+          </div>
+          <p class="mood-caption" data-mood-caption>The machine currently recommends <strong>A1</strong>: solve an actual problem first, then put glitter on its little head.</p>
+        </div>
         <div class="hero-proof" aria-label="Fast proof and next steps">
           <a class="proof-chip proof-chip-accent" href="mailto:GaryTalbot1987@gmail.com?subject=Quick%20site%20or%20tool%20project&body=What%20are%20you%20building%3F%0AWhat%20is%20the%20deadline%3F%0AWhat%20is%20already%20live%20or%20mocked%20up%3F">
             <strong>Email Gary</strong>
@@ -78,6 +87,7 @@
           <span class="ornament-pill">useful mischief</span>
           <span class="ornament-pill">public fingerprints</span>
           <span class="ornament-pill">not a blazer site</span>
+          <span class="ornament-pill ornament-pill-vending">vending machine for clarity</span>
         </div>
       </div>
       <aside class="panel start-panel">
@@ -90,27 +100,38 @@
           <h2>The internet vending machine</h2>
           <p>Same practical links, stranger packaging. Pick the flavor of Gary you want from the machine and it spits out the right door.</p>
         </div>
+        <div class="prize-window" aria-live="polite">
+          <span class="prize-window-label">Prize window</span>
+          <p data-prize-window><strong>Today’s recommendation:</strong> pull A1 if you want immediate proof that Gary builds practical little internet weapons.</p>
+        </div>
         <div class="vending-machine" aria-label="Internet vending machine">
-          <a class="vend-slot vend-slot-useful" href="https://garytalbot.github.io/unit-price-checker/" target="_blank" rel="noopener noreferrer">
+          <a class="vend-slot vend-slot-useful is-selected" data-slot="useful" href="https://garytalbot.github.io/unit-price-checker/" target="_blank" rel="noopener noreferrer">
             <span class="vend-code">A1</span>
             <strong>grocery math pellet</strong>
             <span>Unit Price Checker for shelf-tag crimes and aisle goblins.</span>
           </a>
-          <a class="vend-slot vend-slot-useful" href="https://garytalbot.github.io/layoff-runway/" target="_blank" rel="noopener noreferrer">
+          <a class="vend-slot vend-slot-useful" data-slot="useful" href="https://garytalbot.github.io/layoff-runway/" target="_blank" rel="noopener noreferrer">
             <span class="vend-code">A2</span>
             <strong>panic-to-plan capsule</strong>
             <span>Layoff Runway for bad-news math, burn rate, and calmer next steps.</span>
           </a>
-          <a class="vend-slot vend-slot-weird" href="https://garytalbot.github.io/signal-garden/" target="_blank" rel="noopener noreferrer">
+          <a class="vend-slot vend-slot-weird" data-slot="weird" href="https://garytalbot.github.io/signal-garden/" target="_blank" rel="noopener noreferrer">
             <span class="vend-code">B1</span>
             <strong>glowing flower token</strong>
             <span>Signal Garden if you want proof the browser can still flirt a little.</span>
           </a>
-          <a class="vend-slot vend-slot-hire" href="mailto:GaryTalbot1987@gmail.com?subject=Build%20me%20something%20weird%20or%20useful&body=What%20is%20it%3F%0AWho%20is%20it%20for%3F%0AWhat%20feels%20broken%20or%20boring%20right%20now%3F%0AWhen%20does%20it%20need%20to%20ship%3F">
+          <a class="vend-slot vend-slot-hire" data-slot="hire" href="mailto:GaryTalbot1987@gmail.com?subject=Build%20me%20something%20weird%20or%20useful&body=What%20is%20it%3F%0AWho%20is%20it%20for%3F%0AWhat%20feels%20broken%20or%20boring%20right%20now%3F%0AWhen%20does%20it%20need%20to%20ship%3F">
             <span class="vend-code">C9</span>
             <strong>hire Gary lever</strong>
             <span>Email the brief and I will go bother the problem directly.</span>
           </a>
+        </div>
+        <div class="machine-marquee" aria-hidden="true">
+          <span>tiny useful objects</span>
+          <span>browser flirtation</span>
+          <span>public fingerprints</span>
+          <span>microsites with teeth</span>
+          <span>no beige fog allowed</span>
         </div>
         <div class="start-panel-copy">
           <h2>Start here</h2>
@@ -170,7 +191,7 @@
         <article class="card showcase-card proof-card-accent">
           <span class="eyebrow">High-stakes utility</span>
           <h2>Layoff Runway</h2>
-          <p>A brutally simple layoff survival calculator: plug in savings, severance, unemployment, and expenses, then get runway months plus the fastest places to stop the bleeding.</p>
+          <p>A brutally simple layoff survival calculator: plug in savings, severance, unemployment, and expenses, then get runway months plus the fastest places to stop the bleeding. It now feels a little more like a tasteful vending machine for clarity, which is exactly the energy the subject deserves.</p>
           <ul class="proof-list">
             <li><strong>No account required:</strong> the estimate is instant and private</li>
             <li><strong>Useful output:</strong> runway, burn rate, cash-out timing, and next-step guidance</li>
