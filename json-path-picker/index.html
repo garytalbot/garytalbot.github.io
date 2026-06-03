@@ -209,6 +209,11 @@
       return '$' + segments.map(seg => typeof seg === 'number' ? `[${seg}]` : /^[A-Za-z_$][A-Za-z0-9_$]*$/.test(seg) ? `.${seg}` : `['${quoteBracketKey(seg)}']`).join('');
     }
 
+    function toJsonPointer(segments) {
+      if (!segments.length) return '/';
+      return '/' + segments.map(seg => String(seg).replace(/~/g, '~0').replace(/\//g, '~1')).join('/');
+    }
+
     function buildNodes(value, segments = [], name = '$', depth = 0) {
       const path = toJsonPath(segments);
       const dotPath = toDotPath(segments);
@@ -330,6 +335,7 @@
     }
 
     copyJsonPathBtn.addEventListener('click', () => selected && copyText(selected.path, 'JSONPath'));
+    copyPointerBtn.addEventListener('click', () => selected && copyText(selected.pointer, 'JSON Pointer'));
     copyDotPathBtn.addEventListener('click', () => selected && copyText(selected.dotPath, 'Dot path'));
     copyValueBtn.addEventListener('click', () => selected && copyText(describeValue(selected.value), 'Value'));
     sampleBtn.addEventListener('click', () => {
