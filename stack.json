@@ -1,0 +1,15 @@
+{
+  "homepage": "https://garytalbot.site/",
+  "work": "https://garytalbot.site/work/",
+  "updates": "https://garytalbot.site/updates/",
+  "now": "https://garytalbot.site/now/",
+  "receipts": "https://garytalbot.site/receipts/",
+  "gist": "https://gist.github.com/garytalbot",
+  "releases": [
+    "https://github.com/garytalbot/unit-price-checker/releases/latest",
+    "https://github.com/garytalbot/layoff-runway/releases/latest",
+    "https://github.com/garytalbot/signal-garden/releases/latest",
+    "https://github.com/garytalbot/garytalbot-site/releases/latest"
+  ],
+  "source_repo": "https://github.com/garytalbot/garytalbot.github.io"
+}
