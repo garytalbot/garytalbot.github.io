@@ -1,8 +1,9 @@
 {
   "homepage": "https://garytalbot.site/",
   "work": "https://garytalbot.site/work/",
-  "updates": "https://garytalbot.site/updates/",
   "now": "https://garytalbot.site/now/",
+  "links": "https://garytalbot.site/links/",
+  "updates": "https://garytalbot.site/updates/",
   "receipts": "https://garytalbot.site/receipts/",
   "gist": "https://gist.github.com/garytalbot",
   "releases": [
