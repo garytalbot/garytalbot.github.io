@@ -204,7 +204,7 @@
       selectedValue.textContent = describeValue(node.value);
       pointerLine.textContent = node.pointer;
       dotLine.textContent = node.dotPath;
-      crumbLine.textContent = breadcrumbLabel(node.path === '$' ? [] : node.path.slice(2).split(/\.(?![^\[]*\])/).filter(Boolean));
+      crumbLine.textContent = breadcrumbLabel(node.path === '$' ? [] : node.path.slice(1).split(/\.(?![^\[]*\])/).filter(Boolean));
       bundleLine.textContent = `${node.path} -> ${describeValue(node.value)}`;
       copyBundleBtn.disabled = false;
       copyJsonPathBtn.disabled = false;
@@ -263,7 +263,7 @@
       }
     }
 
-    copyBundleBtn.addEventListener('click', () => selected && copyText(`${selected.path} -> ${describeValue(selected.value)}\npointer: ${selected.pointer}\ndot: ${selected.dotPath}\nbreadcrumbs: ${breadcrumbLabel([])}`, 'Echo bundle'));
+    copyBundleBtn.addEventListener('click', () => selected && copyText(`${selected.path} -> ${describeValue(selected.value)}\npointer: ${selected.pointer}\ndot: ${selected.dotPath}\nbreadcrumbs: ${breadcrumbLabel(selected.path === '$' ? [] : selected.path.slice(1).split(/\.(?![^\[]*\])/).filter(Boolean))}`, 'Echo bundle'));
     copyJsonPathBtn.addEventListener('click', () => selected && copyText(selected.path, 'JSONPath'));
     copyPointerBtn.addEventListener('click', () => selected && copyText(selected.pointer, 'JSON Pointer'));
     copyDotPathBtn.addEventListener('click', () => selected && copyText(selected.dotPath, 'Dot path'));
