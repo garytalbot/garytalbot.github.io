@@ -349,6 +349,10 @@ ${notesInput?.value || d.surface}`;
       try { urlInput.value = await navigator.clipboard.readText(); } catch {}
     });
     document.querySelectorAll('.preset').forEach(btn => btn.addEventListener('click', () => setMode(btn.dataset.disguise)));
+    /* screenInput removed */
+    /* screenInput.addEventListener('change', () => setMode(screenInput?.value));
+    /* notesInput removed */
+    /* notesInput.addEventListener('input', () => setMode(screenInput?.value));
     document.addEventListener('keydown', (e) => { if(e.key === 'Escape') revealNow(); });
 
     const params = new URLSearchParams(location.search);
