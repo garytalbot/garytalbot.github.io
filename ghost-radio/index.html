@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ghost Radio — Gary Talbot</title>
+  <meta name="description" content="Ghost Radio is a spectral broadcast page for late-night tuning, static-rich copy, and the kind of small public object that feels like it came in on shortwave.">
+  <meta name="theme-color" content="#0b0d12">
+  <meta name="robots" content="index,follow">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://garytalbot.github.io/ghost-radio/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ghost Radio — Gary Talbot">
+  <meta property="og:description" content="A spectral broadcast page for late-night tuning, static-rich copy, and a small public object with a pulse.">
+  <meta property="og:url" content="https://garytalbot.github.io/ghost-radio/">
+  <meta property="og:image" content="https://garytalbot.github.io/assets/social-card.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ghost Radio — Gary Talbot">
+  <meta name="twitter:description" content="A spectral broadcast page for late-night tuning, static-rich copy, and a small public object with a pulse.">
+  <meta name="twitter:image" content="https://garytalbot.github.io/assets/social-card.svg">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <style>
+    .radio-hero{align-items:stretch;min-height:auto;padding-top:40px}
+    .radio-shell{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:stretch}
+    .radio-card{padding:22px;display:grid;gap:14px}
+    .radio-card h2,.radio-card h3{margin:0}
+    .radio-meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    .radio-pill{padding:12px 14px;border-radius:18px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);display:grid;gap:4px}
+    .radio-pill span{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+    .radio-pill strong{font-size:1rem;color:#fff}
+    .station-strip{display:flex;flex-wrap:wrap;gap:10px}
+    .station-btn{padding:10px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.05);color:#fff;font-weight:800;cursor:pointer;transition:transform .2s ease,background .2s ease,border-color .2s ease}
+    .station-btn:hover{transform:translateY(-1px)}
+    .station-btn.is-active{background:linear-gradient(135deg, rgba(122,227,255,.2), rgba(255,150,213,.18));border-color:rgba(122,227,255,.35)}
+    .radio-console{position:relative;overflow:hidden;min-height:360px;display:grid;gap:16px;align-content:start}
+    .radio-console::before{content:"";position:absolute;inset:auto -18% -30% -18%;height:220px;background:radial-gradient(circle at 50% 50%, rgba(122,227,255,.2), transparent 62%);filter:blur(14px);pointer-events:none}
+    .dial{padding:18px;border-radius:24px;border:1px solid rgba(255,255,255,.08);background:rgba(9,11,18,.72);display:grid;gap:12px}
+    .dial-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
+    .signal-badge{padding:8px 12px;border-radius:999px;background:rgba(122,227,255,.12);border:1px solid rgba(122,227,255,.24);font-size:.86rem;font-weight:800;color:#fff}
+    .signal-meter{height:16px;border-radius:999px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);overflow:hidden}
+    .signal-fill{height:100%;width:62%;border-radius:inherit;background:linear-gradient(90deg,#7ae3ff,#c8ff71,#ff96d5);transition:width .25s ease}
+    .now-playing{padding:20px;border-radius:24px;border:1px solid rgba(255,255,255,.08);background:rgba(13,15,24,.82);display:grid;gap:10px}
+    .now-playing h3{font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.02;letter-spacing:-.04em}
+    .station-note{color:var(--muted);font-size:.96rem}
+    .station-copy{font:14px/1.65 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#f4ecff;white-space:pre-wrap;min-height:7em}
+    .static-line{height:1px;background:linear-gradient(90deg, transparent, rgba(255,255,255,.22), transparent)}
+    .broadcast-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .broadcast-card{padding:20px}
+    .broadcast-card p{margin:0;color:var(--muted)}
+    .fine-print{color:var(--muted);font-size:.88rem}
+    @media (max-width: 980px){.radio-shell,.radio-hero{grid-template-columns:1fr}.radio-meta,.broadcast-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <nav class="nav" aria-label="Primary">
+      <div class="brand">Gary Talbot</div>
+      <div class="navlinks">
+        <a href="../">Home</a>
+        <a href="../work/">Work</a>
+        <a href="../updates/">Updates</a>
+        <a href="../now/">Now</a>
+      </div>
+    </nav>
+
+    <section class="hero radio-hero">
+      <div>
+        <div class="tag">📻 spectral broadcast · small haunted page · shortwave mood</div>
+        <h1 class="glitch">Ghost Radio.</h1>
+        <p class="lead">A little public broadcast room for late-night tuning, strange signals, and copy that sounds like it arrived through the wall rather than through a brief.</p>
+        <p class="sub">No actual radio tower required. This page is just enough structure to make the weird lane feel deliberate: tune a station, read the signal, and leave with a smaller, better-mannered ghost in your pocket.</p>
+        <div class="cta">
+          <button class="btn primary" type="button" data-tune="attic">Tune attic band</button>
+          <button class="btn" type="button" data-tune="hallway">Shift to hallway loop</button>
+          <button class="btn" type="button" data-tune="moon">Catch moon weather</button>
+          <a class="btn" href="../work/">Back to work</a>
+        </div>
+        <div class="radio-meta">
+          <div class="radio-pill"><span>Mode</span><strong id="modeLabel">Attic band</strong></div>
+          <div class="radio-pill"><span>Frequency</span><strong id="freqLabel">88.1 FM</strong></div>
+          <div class="radio-pill"><span>Signal</span><strong id="signalLabel">62%</strong></div>
+        </div>
+      </div>
+      <aside class="card radio-card radio-console">
+        <div class="dial">
+          <div class="dial-head">
+            <div class="pill"><span class="pill-dot"></span><span id="statusLabel">static is polite today</span></div>
+            <div class="signal-badge">on air</div>
+          </div>
+          <div class="signal-meter" aria-hidden="true"><div class="signal-fill" id="signalFill"></div></div>
+          <div class="now-playing">
+            <div class="eyebrow" id="stationKicker">Attic band</div>
+            <h3 id="stationTitle">The room above the room</h3>
+            <div class="station-note" id="stationNote">A faint signal with soft hum, warm static, and a voice that sounds like it has already seen the end of the hallway.</div>
+            <div class="static-line" aria-hidden="true"></div>
+            <div class="station-copy" id="stationCopy">You can hear dust in the rafters.
+The broadcast is low, but it is honest.
+If you stay still, the static starts to rhyme.</div>
+          </div>
+          <p class="fine-print">Tip: use the buttons above to retune the page. The station changes, but the mood stays haunted on purpose.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Stations</div>
+          <h2 class="section-title">Three ways to hear the room</h2>
+        </div>
+        <p class="section-copy">Each station keeps the page public, readable, and a little unsteady in the right direction.</p>
+      </div>
+      <div class="broadcast-grid">
+        <article class="card broadcast-card">
+          <span class="eyebrow">Attic band</span>
+          <h2>Warm static, low hum</h2>
+          <p>The signal sits just above the floorboards and sounds like it remembers a better version of the night.</p>
+        </article>
+        <article class="card broadcast-card">
+          <span class="eyebrow">Hallway loop</span>
+          <h2>Echoes with a pulse</h2>
+          <p>Sharper edges, a little more motion, and the sense that the message has bounced off three walls before reaching you.</p>
+        </article>
+        <article class="card broadcast-card">
+          <span class="eyebrow">Moon weather</span>
+          <h2>Cold light, slow drift</h2>
+          <p>The cleanest channel in the room, if “clean” still means a little weird and far away.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Why it exists</div>
+          <h2 class="section-title">Because not every public page needs to behave like a brochure</h2>
+        </div>
+        <p class="section-copy">Ghost Radio is here to keep the weird lane visible and the site feeling inhabited. It is a small artifact with a tone, a URL, and a pulse.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <span class="eyebrow">Vibe</span>
+          <h2>Atmosphere first, then utility</h2>
+          <p>The page still gives people a clean route back to work and updates, but the first impression is the broadcast, not a stack of labels.</p>
+        </article>
+        <article class="card">
+          <span class="eyebrow">Public</span>
+          <h2>Visible on purpose</h2>
+          <p>The homepage, work hub, updates archive, now page, RSS feed, and sitemap all point here so it is easy to find without hunting.</p>
+        </article>
+        <article class="card">
+          <span class="eyebrow">Source</span>
+          <h2>Small enough to inspect</h2>
+          <p>The whole page lives in static HTML, CSS, and a tiny script. No backend, no ceremony, no hidden room off the hallway.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+  <script>
+    const stations = {
+      attic: {
+        label: 'Attic band',
+        freq: '88.1 FM',
+        signal: 62,
+        kicker: 'Attic band',
+        title: 'The room above the room',
+        note: 'A faint signal with soft hum, warm static, and a voice that sounds like it has already seen the end of the hallway.',
+        copy: 'You can hear dust in the rafters.\nThe broadcast is low, but it is honest.\nIf you stay still, the static starts to rhyme.',
+        status: 'static is polite today'
+      },
+      hallway: {
+        label: 'Hallway loop',
+        freq: '96.4 FM',
+        signal: 78,
+        kicker: 'Hallway loop',
+        title: 'Echoes that learned to sing',
+        note: 'Sharper edges, a brighter line, and just enough motion to feel like something passed by with intention.',
+        copy: 'One voice returns as two.\nThe corridor keeps the message moving.\nEverything sounds closer when the light is low.',
+        status: 'signal bouncing off the walls'
+      },
+      moon: {
+        label: 'Moon weather',
+        freq: '101.7 FM',
+        signal: 91,
+        kicker: 'Moon weather',
+        title: 'Cold light over open static',
+        note: 'The cleanest channel in the room. It still feels haunted, but it is a courteous kind of haunted.',
+        copy: 'The sky is tuned for a slow drift.\nThe notes are clear, but they arrive cold.\nEven the silence has a broadcast schedule.',
+        status: 'moonlight on the dial'
+      }
+    };
+
+    const modeLabel = document.getElementById('modeLabel');
+    const freqLabel = document.getElementById('freqLabel');
+    const signalLabel = document.getElementById('signalLabel');
+    const statusLabel = document.getElementById('statusLabel');
+    const stationKicker = document.getElementById('stationKicker');
+    const stationTitle = document.getElementById('stationTitle');
+    const stationNote = document.getElementById('stationNote');
+    const stationCopy = document.getElementById('stationCopy');
+    const signalFill = document.getElementById('signalFill');
+    const buttons = Array.from(document.querySelectorAll('[data-tune]'));
+
+    function tune(key) {
+      const station = stations[key] || stations.attic;
+      modeLabel.textContent = station.label;
+      freqLabel.textContent = station.freq;
+      signalLabel.textContent = `${station.signal}%`;
+      statusLabel.textContent = station.status;
+      stationKicker.textContent = station.kicker;
+      stationTitle.textContent = station.title;
+      stationNote.textContent = station.note;
+      stationCopy.textContent = station.copy;
+      signalFill.style.width = `${station.signal}%`;
+      buttons.forEach((button) => {
+        button.classList.toggle('is-active', button.dataset.tune === key);
+      });
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => tune(button.dataset.tune));
+    });
+
+    tune('attic');
+  </script>
+</body>
+</html>
