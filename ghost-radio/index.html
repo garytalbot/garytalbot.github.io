@@ -4,19 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ghost Radio — Gary Talbot</title>
-  <meta name="description" content="Ghost Radio is a haunted shortwave page with four living station presets, a big dial, a signal readout, browser memory for the last tuned station, and a postcard export for the current haunt.">
+  <meta name="description" content="Ghost Radio is a spectral broadcast page for late-night tuning, static-rich copy, and the kind of small public object that feels like it came in on shortwave.">
   <meta name="theme-color" content="#0b0d12">
   <meta name="robots" content="index,follow">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://garytalbot.github.io/ghost-radio/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Ghost Radio — Gary Talbot">
-  <meta property="og:description" content="A haunted shortwave page with living presets, browser memory, a big dial, and a postcard export that keeps the current haunt intact.">
+  <meta property="og:description" content="A spectral broadcast page for late-night tuning, static-rich copy, and a small public object with a pulse.">
   <meta property="og:url" content="https://garytalbot.github.io/ghost-radio/">
   <meta property="og:image" content="https://garytalbot.github.io/ghost-radio/share-card.svg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Ghost Radio — Gary Talbot">
-  <meta name="twitter:description" content="A haunted shortwave page with living presets, browser memory, a big dial, and a postcard export that keeps the current haunt intact.">
+  <meta name="twitter:description" content="A spectral broadcast page for late-night tuning, static-rich copy, and a small public object with a pulse.">
   <meta name="twitter:image" content="https://garytalbot.github.io/ghost-radio/share-card.svg">
   <link rel="stylesheet" href="../assets/styles.css">
   <style>
@@ -73,7 +73,7 @@
 
     <section class="hero radio-hero">
       <div>
-        <div class="tag">📻 haunted shortwave · four living presets · broadcast diary</div>
+        <div class="tag">📻 spectral broadcast · small haunted page · shortwave mood</div>
         <h1 class="glitch">Ghost Radio.</h1>
         <p class="lead">A little public broadcast room for late-night tuning, strange signals, and copy that sounds like it arrived through the wall rather than through a brief.</p>
         <p class="sub">No actual radio tower required. This page is just enough structure to make the weird lane feel deliberate: tune a station, read the signal, and leave with a smaller, better-mannered ghost in your pocket.</p>
@@ -81,7 +81,6 @@
           <button class="btn primary" type="button" data-tune="attic">Tune attic band</button>
           <button class="btn" type="button" data-tune="hallway">Shift to hallway loop</button>
           <button class="btn" type="button" data-tune="moon">Catch moon weather</button>
-          <button class="btn" type="button" data-tune="deadair">Drop to dead air</button>
           <a class="btn" href="../work/">Back to work</a>
         </div>
         <div class="radio-meta">
@@ -105,9 +104,8 @@
             <div class="station-copy" id="stationCopy">You can hear dust in the rafters.
 The broadcast is low, but it is honest.
 If you stay still, the static starts to rhyme.</div>
-            <p class="fine-print memory-note" id="memoryNote">This browser will remember the last tuned station after you leave.</p>
           </div>
-          <p class="fine-print">Tip: use the buttons above to retune the page. The station changes, the diary remembers the last tune, and the mood stays haunted on purpose.</p>
+          <p class="fine-print">Tip: use the buttons above to retune the page. The station changes, but the mood stays haunted on purpose.</p>
         </div>
       </aside>
     </section>
@@ -116,9 +114,9 @@ If you stay still, the static starts to rhyme.</div>
       <div class="section-head">
         <div>
           <div class="kicker">Stations</div>
-          <h2 class="section-title">Four ways to hear the room</h2>
+          <h2 class="section-title">Three ways to hear the room</h2>
         </div>
-        <p class="section-copy">Each station keeps the page public, readable, and a little unsteady in the right direction. The broadcast diary stays small and honest: recent tuning notes, not fake lore.</p>
+        <p class="section-copy">Each station keeps the page public, readable, and a little unsteady in the right direction.</p>
       </div>
       <div class="broadcast-grid">
         <article class="card broadcast-card">
@@ -135,11 +133,6 @@ If you stay still, the static starts to rhyme.</div>
           <span class="eyebrow">Moon weather</span>
           <h2>Cold light, slow drift</h2>
           <p>The cleanest channel in the room, if “clean” still means a little weird and far away.</p>
-        </article>
-        <article class="card broadcast-card">
-          <span class="eyebrow">Dead air</span>
-          <h2>The room between stations</h2>
-          <p>No carrier, just the shape of waiting. The dial slips between names and finds a hush with teeth.</p>
         </article>
       </div>
     </section>
@@ -183,7 +176,7 @@ If you stay still, the static starts to rhyme.</div>
           <div class="kicker">Why it exists</div>
           <h2 class="section-title">Because not every public page needs to behave like a brochure</h2>
         </div>
-        <p class="section-copy">Ghost Radio is here to keep the weird lane visible and the site feeling inhabited. It is a small artifact with a tone, a URL, a broadcast log / station diary, and a pulse.</p>
+        <p class="section-copy">Ghost Radio is here to keep the weird lane visible and the site feeling inhabited. It is a small artifact with a tone, a URL, and a pulse.</p>
       </div>
       <div class="grid">
         <article class="card">
@@ -235,16 +228,6 @@ If you stay still, the static starts to rhyme.</div>
         note: 'The cleanest channel in the room. It still feels haunted, but it is a courteous kind of haunted.',
         copy: 'The sky is tuned for a slow drift.\nThe notes are clear, but they arrive cold.\nEven the silence has a broadcast schedule.',
         status: 'moonlight on the dial'
-      },
-      deadair: {
-        label: 'Dead air',
-        freq: '0.00 MHz',
-        signal: 44,
-        kicker: 'Dead air',
-        title: 'The room between stations',
-        note: 'No carrier. Just the shape of waiting, with a little hum around the edges.',
-        copy: 'Between one thought and the next, the room keeps listening.\nNo carrier, just the shape of waiting.\nThe dial slips between names and finds a hush with teeth.',
-        status: 'no carrier, still listening'
       }
     };
 
@@ -256,26 +239,8 @@ If you stay still, the static starts to rhyme.</div>
     const stationTitle = document.getElementById('stationTitle');
     const stationNote = document.getElementById('stationNote');
     const stationCopy = document.getElementById('stationCopy');
-    const memoryNote = document.getElementById('memoryNote');
     const signalFill = document.getElementById('signalFill');
     const buttons = Array.from(document.querySelectorAll('[data-tune]'));
-    const STORAGE_KEY = 'ghost-radio:last-station';
-
-    function safeReadStorage() {
-      try {
-        return localStorage.getItem(STORAGE_KEY);
-      } catch {
-        return null;
-      }
-    }
-
-    function safeWriteStorage(key) {
-      try {
-        localStorage.setItem(STORAGE_KEY, key);
-      } catch {
-        // Storage is best-effort only.
-      }
-    }
 
     function tune(key) {
       const station = stations[key] || stations.attic;
@@ -287,9 +252,7 @@ If you stay still, the static starts to rhyme.</div>
       stationTitle.textContent = station.title;
       stationNote.textContent = station.note;
       stationCopy.textContent = station.copy;
-      memoryNote.textContent = `Last tuned here: ${station.label}. The dial keeps that memory in this browser.`;
       signalFill.style.width = `${station.signal}%`;
-      safeWriteStorage(key);
       buttons.forEach((button) => {
         button.classList.toggle('is-active', button.dataset.tune === key);
       });
@@ -299,7 +262,7 @@ If you stay still, the static starts to rhyme.</div>
       button.addEventListener('click', () => tune(button.dataset.tune));
     });
 
-    tune((new URLSearchParams(location.hash.replace(/^#/, '')).get('tune') || safeReadStorage() || 'attic'));
+    tune('attic');
   </script>
 </body>
 </html>
