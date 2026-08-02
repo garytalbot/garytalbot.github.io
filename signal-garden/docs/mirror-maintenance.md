@@ -23,6 +23,7 @@ ROUTES=(
   sigil-weather
   static-psalm
   spectral-drift
+  void-loom
   void-chorale
   void-liturgy
   void-radiance
