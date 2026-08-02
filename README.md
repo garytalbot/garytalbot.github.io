@@ -9,6 +9,6 @@ The automation lives in garytalbot-site/scripts/sync-root-pages.sh and garytalbo
 
 - Public front door: <https://garytalbot.github.io/>
 - Source repo: <https://github.com/garytalbot/garytalbot-site>
-- Latest synced source commit at generation time: c2a2bfb
+- Latest synced source commit at generation time: 339d99e
 
 If you need to change site content, edit garytalbot-site and let the sync workflow mirror it here.
